@@ -1,0 +1,3 @@
+name: Odroid-Board
+description: "CI Testing for the Odroid Board"
+runs-on: odroid

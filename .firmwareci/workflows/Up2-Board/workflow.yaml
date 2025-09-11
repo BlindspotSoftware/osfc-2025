@@ -1,0 +1,3 @@
+name: Up2-Board
+description: "CI Testing for the Up2 Board"
+runs-on: up2

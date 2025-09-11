@@ -1,0 +1,5 @@
+name: Up2 Board
+label: up2
+attributes:
+  dutctl: "demeter.demo.vpn.firmware-ci.com"
+  host: "up2.lan"
