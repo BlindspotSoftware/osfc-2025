@@ -1,0 +1,32 @@
+version: 0
+devices:
+  odroid:
+    desc: "Odroid-H4-Board"
+    cmds:
+      flash:
+        desc: "Flash operations for the Odroid-H4-board"
+        modules:
+          - module: flash
+            main: true
+            options:
+              tool: "/usr/sbin/flashrom"
+              programmer: "dediprog"
+
+      power:
+        desc: "Control the power via WiFi socket"
+        modules:
+          - module: wifisocket
+            main: true
+            options:
+              host: http://192.168.8.52
+              channel: 1
+
+      serial:
+        desc: "Serial console for the Odroid-H4-board"
+        modules:
+          - module: serial
+            main: true
+            options:
+              port: /dev/serial/by-id/usb-9elements_Picoprog_E6635C08CB404F34-if02
+              #port: /dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller_EPANb137X02-if00-port0
+              baudrate: 115200

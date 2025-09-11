@@ -1,0 +1,6 @@
+name: Odroid-H4-Board
+label: odroid-h4
+attributes:
+  dutctl: "heracles.demo.vpn.firmware-ci.com"
+  host: "odroid.local"
+  pikvm: "freya.demo.vpn.firmware-ci.com"

@@ -1,0 +1,3 @@
+name: Odroid-H4-Board
+description: "CI Testing for the Odroid-H4 Board"
+runs-on: odroid-h4
