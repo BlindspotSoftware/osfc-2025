@@ -27,7 +27,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 2
     steps:
@@ -42,7 +49,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 3
     steps:
@@ -57,7 +71,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 4
     steps:
@@ -72,7 +93,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 5
     steps:
@@ -87,7 +115,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 6
     steps:
@@ -102,7 +137,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 7
     steps:
@@ -117,7 +159,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 8
     steps:
@@ -132,7 +181,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 9
     steps:
@@ -147,7 +203,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Reboot 10
     steps:
@@ -162,7 +225,14 @@ stages:
         options:
           timeout: 4m
         parameters:
-          host: "[[attributes.Host]]"
+          host: "[[attributes.host]]"
+          proxy:
+            type: ssh
+            host: "[[attributes.dutctl]]"
+            port: 22
+            ssh:
+              user: oscar
+              identity_file: /root/.ssh/fwci
 
   - name: Shutdown
     steps:
