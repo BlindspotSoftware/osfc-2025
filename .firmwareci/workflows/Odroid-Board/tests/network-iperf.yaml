@@ -16,7 +16,6 @@ defaults:
 stages:
   - name: Network Test
     steps:
-
       - cmd: copy
         name: Copy tooling to DUT
         transport: *transport
@@ -30,7 +29,8 @@ stages:
         transport: *transport
         parameters:
           executable: "/tmp/iperf3-amd64"
-          args: ["-c", "speedtest.wtnet.de", "-p", "5209", "-P", "10", "-4", "-R"]
+          args:
+            ["-c", "speedtest.wtnet.de", "-p", "5209", "-P", "10", "-4", "-R"]
           expect:
             - regex: "iperf Done."
 

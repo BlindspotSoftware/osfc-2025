@@ -1,0 +1,25 @@
+name: Upload Odroid Binary to FirmwareCI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 */2 * * *'
+
+jobs:
+  upload-odroid:
+    if: false # Prevent job from running
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Upload to FirmwareCI
+        uses: docker://firmwareci/action:v5.1
+        with:
+          TOKEN: ${{ secrets.FWCI_TOKEN }}
+          WORKFLOW_ID: "01K5BTGZVWXM076KB73M3XB819"
+          COMMIT_HASH: ${{ github.event.pull_request.head.sha || github.sha }}
+          BINARIES: Binary=.github/assets/binaries/odroid-h4.bin

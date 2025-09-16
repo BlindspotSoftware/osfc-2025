@@ -1,0 +1,8 @@
+post-stage:
+  - cmd: newdutctl
+    name: Clean up. Shutdown the DUT.
+    parameters:
+      agent: "[[attributes.dutctl]]:1024"
+      device: odroid
+      command: power
+      args: ["off"]

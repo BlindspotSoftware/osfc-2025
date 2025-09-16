@@ -12,7 +12,6 @@ defaults:
         host: "[[attributes.dutctl]]"
         user: oscar
         identity_file: /root/.ssh/fwci
-      
 
 stages:
   - name: Display ACPI information

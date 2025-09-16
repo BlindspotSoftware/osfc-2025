@@ -14,43 +14,72 @@ defaults:
         identity_file: /root/.ssh/fwci
 
 pre-stage:
-  - cmd: dutctl
+  - cmd: newdutctl
     name: Shutdown the DUT.
     parameters:
-      host: "[[attributes.dutctl]]"
+      agent: "[[attributes.dutctl]]:1024"
+      device: odroid
       command: power
       args: ["off"]
 
-  - cmd: dutctl
+  - cmd: newdutctl
     name: Flash the provided binary.
     parameters:
-      host: "[[attributes.dutctl ]]"
+      agent: "[[attributes.dutctl]]:1024"
+      device: odroid
       command: flash
       args: [write, "[[input.Binary]]"]
+
+  - cmd: pikvm
+    name: Mount OS Image via PiKVM
+    parameters:
+      command: image
+      host: "[[attributes.pikvm]]"
+      auth:
+        username: demo
+        password: demo
+      image:
+        path: "[[storage.OSImage]]/nixos.img"
 
   - cmd: sleep
     name: Wait for the DUT to settle
     parameters:
-      duration: 15s
+      duration: 5s
 
-  - cmd: dutctl
+  - cmd: newdutctl
     name: Turn the DUT on
     parameters:
-      host: "[[attributes.dutctl]]"
+      agent: "[[attributes.dutctl]]:1024"
+      device: odroid
       command: power
-      args: ["hardreset"]
+      args: ["on"]
     options:
       timeout: 2m
 
-  - cmd: dutctl
+  - cmd: newdutctl
     name: Check Serial
     parameters:
-      host: "[[attributes.dutctl]]"
+      agent: "[[attributes.dutctl]]:1024"
+      device: odroid
       command: serial
-      expect:
-        - regex: "XhcClearBiosOwnership: called to clear BIOS ownership"
+      args: ["Loaded initrd"]
     options:
       timeout: 5m
+
+  - cmd: ping
+    name: Wait for the device to become online.
+    options:
+      timeout: 4m
+    parameters:
+      host: "[[attributes.host]]"
+      port: 22
+      proxy:
+        type: ssh
+        host: "[[attributes.dutctl]]"
+        port: 22
+        ssh:
+          user: oscar
+          identity_file: /root/.ssh/fwci
 
 stages:
   - name: Boot Test

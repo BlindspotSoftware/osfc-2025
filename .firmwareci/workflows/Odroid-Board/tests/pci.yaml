@@ -22,23 +22,23 @@ stages:
         parameters:
           executable: lspci
           expect:
-            - regex: "Audio"
+            - regex: "Multimedia audio controller: Intel Corporation Alder Lake-N PCH High Definition Audio Controller"
 
       - cmd: cmd
-        name: Check Display Controller
+        name: Check SATA Controller
         transport: *transport
         parameters:
           executable: lspci
           expect:
-            - regex: "Display controller"
+            - regex: "SATA controller: ASMedia Technology Inc. ASM1064 Serial ATA Controller"
 
       - cmd: cmd
-        name: Check Processing Controller
+        name: Check RAM Controller
         transport: *transport
         parameters:
           executable: lspci
           expect:
-            - regex: "Signal processing controller"
+            - regex: "RAM memory: Intel Corporation Alder Lake-N PCH Shared SRAM"
 
       - cmd: cmd
         name: Check Serial Bus Controller
@@ -46,7 +46,7 @@ stages:
         parameters:
           executable: lspci
           expect:
-            - regex: "Serial bus controller"
+            - regex: "Serial bus controller: Intel Corporation Alder Lake-N SPI \\(flash\\) Controller"
 
       - cmd: cmd
         name: Power off device

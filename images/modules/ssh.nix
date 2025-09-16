@@ -1,0 +1,16 @@
+# Module for enabling OpenSSH server and setting up authorized keys
+{ pkgs, ... }:
+let
+  sshPubKeys = {
+    firmwareci = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcSD9iHnCrJXkSt7aGSnfL0tVHUm+x6/EDr/FchmBfu";
+    christoph = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC90m1dSPLbiMvk1umZCKCzwPypNkvPjfepH+vSNbTTSCU8hTTygDa1piGbO+0mxwjRW7JaJgT9HUIiin5fjChm/k1oxTT7A9bdbXdH5NEz4lZxbNVVeXt6iSGq1l1DwmgGS92XyiM2+/KMpBMzTZix2Sa/pftqKNsF3dbiYwqnVMmJzoYUJZiItxPEdJtosHdoyxO92DVmqFVDF1ON6VoQHKA8veDRmgsxMgZXbgpemyeWSJw+SE2INP4Nayofs5OSoGiE1X5BefPrRgL343U2CiT1UPupLL6MRAJI/QFj4+BsmsICXH0HbNTTm0PwjbcNZJ49XWnr3tFobrj+GFisVjCK7ZD5o8mQAYTOJcG97ltzK0Aa9md1tFU8sh1TeBGp12ubV2kP0ObcVPBta4FQPa3OnSOx7rZR7Fqc/R/YCR+Z9JXQCWH9HOhtAs3p/sI7+LOphNLCVS56dXqkgZI11e6L9z6E/LMEfguu5ZDvDKgYzSwP4m06vOMCw3VZLh+AIgFfvPewxDqKPuYL1JgE53I3Qe3x4T9lwQfkzHso4n+bYPE0OgLqMu0dH3wgL6tm5cXw2FJPZ/C7kSzjbLgLZqgZcsPH4/XZfL5yBI5HyGxh+Uw3zfieUiQqjOLbNDCkjABFiEhz4JoONqZ7yqgPCZZm0P07j1cxTJEBzwcuWw== christoph.lange@9elements.com";
+    christian = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBIla6aDHUuMAnmcpVR4210mX4qt5LtN93PQDZfQ3g4UTgcc7XMtrZlKHfxwQQv65jygsIOUEBuBh3qPVbd5OfSg= christian.walter@9elements.com";
+    fabian = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCuTX3D4Om1mKuFC/k8VAwBJudTgzUq6ADojRpys5bmzwWZI1MdxgeFJRh0HTgQELqbAnTmbgZVM1r8qq1TmDOwN6FBIiq94LrZjAkf9kWPQnGMOWDuqMsghZWlHOZtbXlIYOLPCLlFXWmWv8TduyJ8Thrs1OEkP0chLzwpUpsVEvW+RmY+3pa0rs2uxG3WlHIb6FigYto7pLvEw/rFd0rAlMStWvectPKaUsqstkakjzw+XlucpvxneuL1Q7ziBQJmk0T/0PhnQh0BEboKFYnD5iKPVt+Z3SXQ0S9IqC/O8ISDLF8ZjJrcnntwQXs750ku3FgCiC/R2Sye5dfu64Ds6B26UckZaclgtCkkp+aMNaxQq6hmfsZiIAyB1KtriFDjvLzgftXIvsLMqE/L8DyNGK9QHOPE4cqgaPAEo42eNpx7ygzvEJFpLv+tuGmmnZsvxWKHspW6c/gq2jGmvtFOXm/MN4Riou0rOuivzt6VrcSYP7JAOsIXkGSN076UEic= fabian.wienand@9elements.com";
+  };
+in
+{
+  users.users.root = {
+    openssh.authorizedKeys.keys = builtins.attrValues sshPubKeys;
+    hashedPassword = "$6$v3ATPkBdonk0QL7s$cNBCuIyilPdddb8.M/h9fySsiJNL3pMYzKY9DZirtlVRUZczt6BIINEZCO88EiBo/BTdHeHFixlLNYoiW7c0K1";
+  };
+}

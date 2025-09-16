@@ -1,5 +1,0 @@
-name: Odroid-Board
-label: odroid
-attributes:
-  dutctl: "heracles.demo.vpn.firmware-ci.com"
-  host: "odroid.lan"
