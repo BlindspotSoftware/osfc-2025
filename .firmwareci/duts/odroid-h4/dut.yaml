@@ -4,3 +4,4 @@ attributes:
   dutctl: "heracles.demo.vpn.firmware-ci.com"
   host: "odroid.local"
   pikvm: "freya.demo.vpn.firmware-ci.com"
+  image: "odroid.img"

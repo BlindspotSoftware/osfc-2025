@@ -24,7 +24,7 @@ pre-stage:
         username: demo
         password: demo
       image:
-        path: "[[storage.OSImage]]/nixos.img"
+        path: "[[storage.OSImages]]/[[attributes.image]]"
 
   - cmd: sleep
     name: Wait for the DUT to settle

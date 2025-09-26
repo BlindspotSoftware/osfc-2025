@@ -36,10 +36,9 @@
 
         # Configure networking for stable interface names
         networking = {
-          useDHCP = false;
-          interfaces.enp1s0.useDHCP = true;
-          # Ensure consistent interface naming
-          usePredictableInterfaceNames = true;
+          useDHCP = true;
+             
+          useNetworkd = true;
         };
 
         # Install lm-sensors for hardware monitoring
@@ -47,9 +46,13 @@
           lm_sensors
         ];
 
+        # Enable Intel I226-V ethernet driver
+        boot.initrd.availableKernelModules = [ "igc" ];
+        boot.kernelModules = [ "igc" ];
+
         firmwareci.kernel = {
-          version = "6.16.6";
-          sha256 = "sha256-SLV7Hi4hZvtgGg4DXS+2OW4pXZJF8N/WiD18DIOLMAI=";
+          version = "6.12.36";
+          sha256 = "sha256-ShaK7S3lqBqt2QuisVOGCpjZm/w0ZRk24X8Y5U8Buow=";
         };
         # Disable ZFS to avoid kernel compatibility issues
         boot.supportedFilesystems = pkgs.lib.mkForce [ "ext4" "vfat" "ntfs" "btrfs" ];
@@ -81,7 +84,7 @@
           inherit (firmwareci-base-image.outputs) baseConfig;
 
           nixosConfigurations = {
-            default = nixpkgs.lib.nixosSystem {
+            odroid = nixpkgs.lib.nixosSystem {
               inherit system;
               modules = [
                 baseConfig
@@ -120,7 +123,7 @@
           packages = {
             odroid = generateDiskImage {
               inherit fsType pkgs;
-              inherit (nixosConfigurations.default) config;
+              inherit (nixosConfigurations.odroid) config;
             };
             odroid-2 = generateDiskImage {
               inherit fsType pkgs;

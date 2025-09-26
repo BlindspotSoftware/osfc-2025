@@ -18,8 +18,7 @@ jobs:
       - name: Upload to FirmwareCI
         uses: docker://firmwareci/action:v5.1
         with:
-          API: https://api.firmwareci.9esec.dev:8444
           TOKEN: ${{ secrets.FWCI_TOKEN }}
-          WORKFLOW_ID: "01K5BTGZVWXM076KB73M3XB819"
+          WORKFLOW_ID: "01K62RNVN3YJ2MFCJM60HFW52Y"
           COMMIT_HASH: ${{ github.event.pull_request.head.sha || github.sha }}
           BINARIES: Binary=.github/assets/odroid-h4.bin

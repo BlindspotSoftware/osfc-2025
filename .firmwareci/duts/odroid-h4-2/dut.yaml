@@ -4,3 +4,4 @@ attributes:
   dutctl: "erebus.demo.vpn.firmware-ci.com"
   host: "odroid-2.local"
   pikvm: "hestia.demo.vpn.firmware-ci.com"
+  image: "odroid-2.img"
