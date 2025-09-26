@@ -1,0 +1,6 @@
+name: Odroid-H4-Board-2
+label: odroid-h4
+attributes:
+  dutctl: "erebus.demo.vpn.firmware-ci.com"
+  host: "odroid-2.local"
+  pikvm: "hestia.demo.vpn.firmware-ci.com"

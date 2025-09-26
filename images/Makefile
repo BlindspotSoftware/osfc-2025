@@ -1,4 +1,4 @@
-TARGETS = odroid
+TARGETS = odroid odroid-2
 
 all: $(TARGETS)
 

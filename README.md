@@ -43,6 +43,8 @@ Both platforms are configured with identical test suites that validate:
 
 ## Dut-agent Setup with PiKVM
 
+### PiKVM
+
 - Boot PiKVM with default config. ([Download PiKVM Image](https://pikvm.org/download/))
 
 - Setup the pikvm as desired
@@ -65,25 +67,9 @@ ssh root@pikvm-ip
   kvmd-htpasswd add demo
 
   pikvm-update
-
-  # Create default user with home directory
-  useradd -m -s /bin/bash oscar
-  echo "oscar ALL=(ALL) NOPASSWD:ALL" | tee /etc/sudoers.d/oscar
-
-  # Set password for default user
-  passwd oscar
-
-  # Create SSH directory and set permissions
-  mkdir -p /home/oscar/.ssh
-  chmod 700 /home/oscar/.ssh
-
-  # Add your public key and fwci-key(replace with actual key)
-  echo "ssh-rsa keykey" | tee /home/oscar/.ssh/authorized_keys
-
-  # Set proper ownership and permissions
-  chown -R oscar:oscar /home/oscar/.ssh
-  chmod 600 /home/oscar/.ssh/authorized_keys
 ```
+
+###  Setup dutctl with Raspberry Pi 4.
 
 - Copy `dutagent`, `dutagent.service` & `config.yaml` to dut. (arm32)
 - Install `dutagent` to PATH of pikvm.

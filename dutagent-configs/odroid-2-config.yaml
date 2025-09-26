@@ -18,7 +18,7 @@ devices:
           - module: wifisocket
             main: true
             options:
-              host: http://192.168.8.52
+              host: http://192.168.8.62
               channel: 1
 
       serial:
@@ -27,5 +27,5 @@ devices:
           - module: serial
             main: true
             options:
-              port: /dev/serial/by-id/usb-9elements_Picoprog_E6635C08CB404F34-if02
+              port: /dev/serial/by-id/usb-9elements_Picoprog_OSFC2024-if02
               baudrate: 115200

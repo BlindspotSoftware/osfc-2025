@@ -16,11 +16,25 @@ defaults:
 stages:
   - name: Reboot 1
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -38,11 +52,25 @@ stages:
 
   - name: Reboot 2
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -60,11 +88,25 @@ stages:
 
   - name: Reboot 3
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -82,11 +124,25 @@ stages:
 
   - name: Reboot 4
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -104,11 +160,25 @@ stages:
 
   - name: Reboot 5
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -126,11 +196,25 @@ stages:
 
   - name: Reboot 6
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -148,11 +232,25 @@ stages:
 
   - name: Reboot 7
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -170,11 +268,25 @@ stages:
 
   - name: Reboot 8
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -192,11 +304,25 @@ stages:
 
   - name: Reboot 9
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.
@@ -214,11 +340,25 @@ stages:
 
   - name: Reboot 10
     steps:
-      - cmd: cmd
-        name: Warm reboot DUT
-        transport: *transport
+      - cmd: newdutctl
+        name: Turn the DUT off
         parameters:
-          executable: reboot
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["off"]
+        options:
+          timeout: 2m
+
+      - cmd: newdutctl
+        name: Turn the DUT on
+        parameters:
+          agent: "[[attributes.dutctl]]:1024"
+          device: odroid
+          command: power
+          args: ["on"]
+        options:
+          timeout: 2m
 
       - cmd: ping
         name: Wait for the device to become online.

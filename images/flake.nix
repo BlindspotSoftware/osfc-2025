@@ -14,11 +14,11 @@
     let
       fsType = "ext4";
 
-      imageConfig = { config, pkgs, ... }: {
+      imageConfig = hostname: { config, pkgs, ... }: {
         imports = [
           ./modules/ssh.nix
         ];
-        networking.hostName = "odroid";
+        networking.hostName = hostname;
 
         # Enable avahi for mDNS hostname resolution
         services.avahi = {
@@ -85,7 +85,14 @@
               inherit system;
               modules = [
                 baseConfig
-                imageConfig
+                (imageConfig "odroid")
+              ];
+            };
+            odroid-2 = nixpkgs.lib.nixosSystem {
+              inherit system;
+              modules = [
+                baseConfig
+                (imageConfig "odroid-2")
               ];
             };
           };
@@ -114,6 +121,10 @@
             odroid = generateDiskImage {
               inherit fsType pkgs;
               inherit (nixosConfigurations.default) config;
+            };
+            odroid-2 = generateDiskImage {
+              inherit fsType pkgs;
+              inherit (nixosConfigurations.odroid-2) config;
             };
           };
         }
