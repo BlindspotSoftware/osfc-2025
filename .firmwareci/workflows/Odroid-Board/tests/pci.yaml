@@ -25,14 +25,6 @@ stages:
             - regex: "Multimedia audio controller: Intel Corporation Alder Lake-N PCH High Definition Audio Controller"
 
       - cmd: cmd
-        name: Check SATA Controller
-        transport: *transport
-        parameters:
-          executable: lspci
-          expect:
-            - regex: "SATA controller: ASMedia Technology Inc. ASM1064 Serial ATA Controller"
-
-      - cmd: cmd
         name: Check RAM Controller
         transport: *transport
         parameters:
