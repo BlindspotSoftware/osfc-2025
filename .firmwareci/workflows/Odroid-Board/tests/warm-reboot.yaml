@@ -26,6 +26,11 @@ stages:
         options:
           timeout: 2m
 
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
+
       - cmd: newdutctl
         name: Turn the DUT on
         parameters:
@@ -61,6 +66,11 @@ stages:
           args: ["off"]
         options:
           timeout: 2m
+
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -98,6 +108,11 @@ stages:
         options:
           timeout: 2m
 
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
+
       - cmd: newdutctl
         name: Turn the DUT on
         parameters:
@@ -133,6 +148,11 @@ stages:
           args: ["off"]
         options:
           timeout: 2m
+
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -170,6 +190,11 @@ stages:
         options:
           timeout: 2m
 
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
+
       - cmd: newdutctl
         name: Turn the DUT on
         parameters:
@@ -205,6 +230,11 @@ stages:
           args: ["off"]
         options:
           timeout: 2m
+
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -242,6 +272,11 @@ stages:
         options:
           timeout: 2m
 
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
+
       - cmd: newdutctl
         name: Turn the DUT on
         parameters:
@@ -277,6 +312,11 @@ stages:
           args: ["off"]
         options:
           timeout: 2m
+
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -314,6 +354,11 @@ stages:
         options:
           timeout: 2m
 
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
+
       - cmd: newdutctl
         name: Turn the DUT on
         parameters:
@@ -349,6 +394,11 @@ stages:
           args: ["off"]
         options:
           timeout: 2m
+
+      - cmd: sleep
+        name: Let DUT settle
+        parameters:
+          duration: 60s
 
       - cmd: newdutctl
         name: Turn the DUT on
