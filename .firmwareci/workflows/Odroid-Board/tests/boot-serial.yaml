@@ -29,6 +29,8 @@ pre-stage:
       device: odroid
       command: flash
       args: [write, "[[input.Binary]]"]
+    options:
+      timeout: 5m
 
   - cmd: pikvm
     name: Mount OS Image via PiKVM
@@ -53,8 +55,6 @@ pre-stage:
       device: odroid
       command: power
       args: ["on"]
-    options:
-      timeout: 2m
 
   - cmd: newdutctl
     name: Check Serial
@@ -69,7 +69,7 @@ pre-stage:
   - cmd: ping
     name: Wait for the device to become online.
     options:
-      timeout: 4m
+      timeout: 5m
     parameters:
       host: "[[attributes.host]]"
       port: 22
