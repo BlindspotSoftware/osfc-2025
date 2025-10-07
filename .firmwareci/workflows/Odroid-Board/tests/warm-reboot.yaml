@@ -29,7 +29,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -70,7 +70,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -111,7 +111,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -152,7 +152,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -193,7 +193,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -234,7 +234,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -275,7 +275,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -316,7 +316,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -357,7 +357,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on
@@ -398,7 +398,7 @@ stages:
       - cmd: sleep
         name: Let DUT settle
         parameters:
-          duration: 60s
+          duration: 30s
 
       - cmd: newdutctl
         name: Turn the DUT on

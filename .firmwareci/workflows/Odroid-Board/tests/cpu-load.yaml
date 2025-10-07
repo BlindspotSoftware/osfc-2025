@@ -38,7 +38,7 @@ stages:
           timeout: 30m
         parameters:
           args: [--ignite-cpu]
-          duration: 20m
+          duration: 10m
 
       - cmd: cmd
         name: Check CPU Temperature after Stress Test
