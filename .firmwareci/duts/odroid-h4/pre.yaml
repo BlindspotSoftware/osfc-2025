@@ -41,6 +41,22 @@ pre-stage:
       command: power
       args: ["on"]
 
+  - cmd: sleep
+    name: Wait for the DUT to settle
+    parameters:
+      duration: 10s
+
+  - cmd: pikvm
+    name: Hit enter to boot from the mounted image
+    parameters:
+      command: keyboard
+      keyboard:
+        keys: ["enter"]
+      host: "[[attributes.pikvm]]"
+      auth:
+        username: demo
+        password: demo
+
   - cmd: ping
     name: Wait for the device to become online.
     options:
