@@ -1,5 +1,5 @@
 pre-stage:
-  - cmd: newdutctl
+  - cmd: dutctl
     name: Shutdown the DUT.
     parameters:
       agent: "[[attributes.dutctl]]:1024"
@@ -7,7 +7,7 @@ pre-stage:
       command: power
       args: ["off"]
 
-  - cmd: newdutctl
+  - cmd: dutctl
     name: Flash the provided binary.
     parameters:
       agent: "[[attributes.dutctl]]:1024"
@@ -33,7 +33,7 @@ pre-stage:
     parameters:
       duration: 5s
 
-  - cmd: newdutctl
+  - cmd: dutctl
     name: Turn the DUT on
     parameters:
       agent: "[[attributes.dutctl]]:1024"
