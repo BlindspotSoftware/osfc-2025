@@ -14,9 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Upload to FirmwareCI
-        uses: docker://firmwareci/action:v5.1
+        uses: docker://firmwareci/action:v5.2
         with:
           TOKEN: ${{ secrets.FWCI_TOKEN }}
-          WORKFLOW_ID: "01K62RNVN3YJ2MFCJM60HFW52Y"
-          COMMIT_HASH: ${{ github.event.pull_request.head.sha || github.sha }}
+          WORKFLOW_NAME: Odroid-H4-Board
           BINARIES: Binary=.github/assets/odroid-h4.bin
